@@ -430,13 +430,13 @@
 0x400810FC C   FIELD 08w04 INSTNUM: Instance Number within the device. This will be a parameter to the RTL for modules that can have multiple instances
 0x400810FC C   FIELD 12w04 FEATUREVER: Feature Set for the module *instance*
 0x400810FC C   FIELD 16w16 MODULEID: Module identification contains a unique peripheral identification number. The assignments are maintained in a central database for all of the platform modules to ensure uniqueness.
-0x40081100 B  REGISTER WWDT0_WWDTCTL0 (read-writeonce): Window Watchdog Timer Control Register 0
-0x40081100 C   FIELD 00w03 CLKDIV (read-writeonce): Module Clock Divider, Divide the clock source by CLKDIV+1. Divider values from /1 to /8 are possible. The clock divider is currently 4 bits. Bit 4 has no effect and should always be written with 0.
-0x40081100 C   FIELD 04w03 PER (read-writeonce): Timer Period of the WWDT. These bits select the total watchdog timer count.
-0x40081100 C   FIELD 08w03 WINDOW0 (read-writeonce): Closed window period in percentage of the timer interval. WWDTCTL1.WINSEL determines the active window setting (WWDTCTL0.WINDOW0 or WWDTCTL0.WINDOW1).
-0x40081100 C   FIELD 12w03 WINDOW1 (read-writeonce): Closed window period in percentage of the timer interval. WWDTCTL1.WINSEL determines the active window setting (WWDTCTL0.WINDOW0 or WWDTCTL0.WINDOW1).
-0x40081100 C   FIELD 16w01 MODE (read-writeonce): Window Watchdog Timer Mode
-0x40081100 C   FIELD 17w01 STISM (read-writeonce): Stop In Sleep Mode. The functionality of this bit requires that POLICY.HWCEN = 0. If POLICY.HWCEN = 1 the WWDT resets during sleep and needs re-configuration. Note: This bit has no effect for the global Window Watchdog as Sleep Mode is not supported.
+0x40081100 B  REGISTER WWDT0_WWDTCTL0 (read-writeOnce): Window Watchdog Timer Control Register 0
+0x40081100 C   FIELD 00w03 CLKDIV (read-writeOnce): Module Clock Divider, Divide the clock source by CLKDIV+1. Divider values from /1 to /8 are possible. The clock divider is currently 4 bits. Bit 4 has no effect and should always be written with 0.
+0x40081100 C   FIELD 04w03 PER (read-writeOnce): Timer Period of the WWDT. These bits select the total watchdog timer count.
+0x40081100 C   FIELD 08w03 WINDOW0 (read-writeOnce): Closed window period in percentage of the timer interval. WWDTCTL1.WINSEL determines the active window setting (WWDTCTL0.WINDOW0 or WWDTCTL0.WINDOW1).
+0x40081100 C   FIELD 12w03 WINDOW1 (read-writeOnce): Closed window period in percentage of the timer interval. WWDTCTL1.WINSEL determines the active window setting (WWDTCTL0.WINDOW0 or WWDTCTL0.WINDOW1).
+0x40081100 C   FIELD 16w01 MODE (read-writeOnce): Window Watchdog Timer Mode
+0x40081100 C   FIELD 17w01 STISM (read-writeOnce): Stop In Sleep Mode. The functionality of this bit requires that POLICY.HWCEN = 0. If POLICY.HWCEN = 1 the WWDT resets during sleep and needs re-configuration. Note: This bit has no effect for the global Window Watchdog as Sleep Mode is not supported.
 0x40081104 B  REGISTER WWDT0_WWDTCTL1 (rw): Window Watchdog Timer Control Register 0
 0x40081104 C   FIELD 00w01 WINSEL (rw): Close Window Select
 0x40081108 B  REGISTER WWDT0_WWDTCNTRST (rw): Window Watchdog Timer Counter Reset Register
